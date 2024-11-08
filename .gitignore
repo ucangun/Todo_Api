@@ -30,7 +30,3 @@ coverage/
 # Build and dist folders
 /dist/
 /build/
-
-
-
-.gitignore
