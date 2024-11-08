@@ -1,0 +1,33 @@
+# Node.js dependencies
+/node_modules/
+
+# Logs
+*.log
+logs/
+
+# Environment variables file
+.env
+
+# NPM package lock file
+package-lock.json
+
+# Temporary build files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files (macOS, Windows, etc.)
+.DS_Store
+Thumbs.db
+
+# IDEs and text editors (e.g., VSCode, IntelliJ)
+.vscode/
+.idea/
+
+# Coverage folder (if using test coverage tools)
+coverage/
+
+# Build and dist folders
+/dist/
+/build/
+
