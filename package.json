@@ -16,6 +16,8 @@
     "express-mongo-sanitize": "^2.2.0",
     "express-rate-limit": "^7.4.1",
     "helmet": "^8.0.0",
-    "mongoose": "^8.8.0"
+    "mongoose": "^8.8.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   }
 }

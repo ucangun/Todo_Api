@@ -12,6 +12,34 @@ require("./server");
 
 const PORT = process.env.PORT || 8000;
 
+// Swagger setup
+const swaggerJsdoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+
+// Swagger options
+const swaggerOptions = {
+  definition: {
+    openapi: "3.0.0", // OpenAPI sürümünü belirtiyoruz
+    info: {
+      title: "Todo API",
+      version: "1.0.0",
+      description: "Todo API için Swagger dokümantasyonu",
+    },
+    servers: [
+      {
+        url: `http://127.0.0.1:${PORT}`,
+      },
+    ],
+  },
+  apis: ["./src/routes/*.js"], // API'lerinizin bulunduğu dosya yolu
+};
+
+// Swagger docs oluşturma
+const swaggerSpec = swaggerJsdoc(swaggerOptions);
+
+// Swagger UI ile API dokümantasyonu arayüzünü başlatma
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 /********************************************************************/
 
 // Middlewares:
