@@ -12,7 +12,7 @@ module.exports = {
 
   create: async (req, res) => {
     const newTodo = await Todos.create({
-      text: req.body.title,
+      text: req.body.text,
     });
     res.status(201).send({
       error: false,
