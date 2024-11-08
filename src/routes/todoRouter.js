@@ -5,8 +5,10 @@ const router = express.Router();
 
 const TodoController = require("../controllers/todoController");
 
-const { list, create } = TodoController;
+const { list, create, read, update, delete: deleteTodo } = TodoController;
 
 router.route("/").get(list).post(create);
+
+router.route("/id").get(read);
 
 module.exports = router;
