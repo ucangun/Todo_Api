@@ -19,11 +19,11 @@ require("express-async-errors");
 
 app.use("/todo", require("./src/routes/todoRouter"));
 
-// catch errors
-app.use(require("./src/middlewares/errorHandler"));
-
 // Sanitize user input to prevent NoSQL injection attacks
 app.use(mongoSanitize());
+
+// catch errors
+app.use(require("./src/middlewares/errorHandler"));
 
 /********************************************************************/
 
