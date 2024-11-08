@@ -19,19 +19,19 @@ const swaggerUi = require("swagger-ui-express");
 // Swagger options
 const swaggerOptions = {
   definition: {
-    openapi: "3.0.0", // OpenAPI sürümünü belirtiyoruz
+    openapi: "3.0.0",
     info: {
       title: "Todo API",
       version: "1.0.0",
-      description: "Todo API için Swagger dokümantasyonu",
+      description: "A simple API for managing todos",
     },
     servers: [
       {
-        url: `http://127.0.0.1:${PORT}`,
+        url: process.env.HEROKU_URL || "http://127.0.0.1:8000",
       },
     ],
   },
-  apis: ["./src/routes/*.js"], // API'lerinizin bulunduğu dosya yolu
+  apis: ["./src/routes/todoRouter.js"],
 };
 
 // Swagger docs oluşturma
