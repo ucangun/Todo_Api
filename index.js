@@ -31,6 +31,11 @@ const limiter = rateLimit({
 });
 app.use(limiter); // Apply rate limiting to all incoming requests
 
+// Welcome route to indicate the server is up
+app.get("/", (req, res) => {
+  res.send("Welcome to the Todo API! The server is up and running.");
+});
+
 // Route for Todo-related operations
 app.use("/todo", require("./src/routes/todoRouter"));
 
