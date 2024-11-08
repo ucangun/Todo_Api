@@ -11,6 +11,12 @@ const PORT = process.env.PORT || 8000;
 
 /********************************************************************/
 
+// Middlewares:
+
+app.use(express.json());
+
+app.use("/todo", require("./src/routes/todoRouter"));
+
 /********************************************************************/
 
 app.listen(PORT, () => {
