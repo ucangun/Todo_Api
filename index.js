@@ -18,6 +18,9 @@ require("express-async-errors");
 
 app.use("/todo", require("./src/routes/todoRouter"));
 
+// catch errors
+app.use(require("./src/middlewares/errorHandler"));
+
 /********************************************************************/
 
 app.listen(PORT, () => {
