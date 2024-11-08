@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 8000;
 // Middlewares:
 
 app.use(express.json());
+require("express-async-errors");
 
 app.use("/todo", require("./src/routes/todoRouter"));
 
