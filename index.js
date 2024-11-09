@@ -49,6 +49,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 const corsOptions = {
   origin: process.env.HEROKU_URL || "http://localhost:3000",
   methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"],
 };
 app.use(cors(corsOptions));
