@@ -26,7 +26,3 @@ The API is live on Heroku. You can access it using the following URL:
 - **Express.js**: Web framework for Node.js
 - **Swagger UI**: API documentation tool
 - **Heroku**: Platform for deployment
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
