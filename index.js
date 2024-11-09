@@ -6,6 +6,7 @@ require("dotenv").config();
 const mongoSanitize = require("express-mongo-sanitize");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
+const cors = require("cors");
 
 // DB connection
 require("./server");
@@ -43,6 +44,14 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 /********************************************************************/
 
 // Middlewares:
+
+// CORS Middleware: Allow requests from specific origin (frontend domain)
+const corsOptions = {
+  origin: process.env.HEROKU_URL || "http://localhost:3000",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+app.use(cors(corsOptions));
 
 // Middleware for parsing incoming JSON requests
 app.use(express.json());
